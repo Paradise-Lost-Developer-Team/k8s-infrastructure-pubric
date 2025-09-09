@@ -1,0 +1,202 @@
+---
+# Funya-Mura Minecraft Server (NeoForge 1.21.1)
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: funya-mura-mc
+  namespace: mc-server
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: funya-mura-mc
+  template:
+    metadata:
+      labels:
+        app: funya-mura-mc
+    spec:
+      nodeSelector:
+        kubernetes.io/hostname: k8s-worker02-node
+      containers:
+      - name: minecraft-server
+        image: itzg/minecraft-server:latest
+        ports:
+        - containerPort: 25566
+        env:
+        - name: EULA
+          value: "TRUE"
+        - name: TYPE
+          value: "NEOFORGE"
+        - name: VERSION
+          value: "1.21.1"
+        - name: NEOFORGE_VERSION
+          value: "21.1.181"
+        - name: ONLINE_MODE
+          value: "TRUE"
+        - name: SERVER_PORT
+          value: "25566"
+        - name: DEBUG
+          value: "TRUE"
+        - name: MAX_PLAYERS
+          value: "8"
+        - name: MOTD
+          value: "§f[§dふにゃ村§f] §7- 霧深き山里に、今、運命が舞い降りる。\n§e<1.21.1> §b[NeoForge]"
+        - name: DIFFICULTY
+          value: "HARD"
+        - name: SPAWN_PROTECTION
+          value: "0"
+        - name: ENABLE_COMMAND_BLOCK
+          value: "TRUE"
+        - name: SNOOPER_ENABLED
+          value: "FALSE"
+        - name: USE_NATIVE_TRANSPORT
+          value: "TRUE"
+        - name: STOP_SERVER_ANNOUNCE_DELAY
+          value: "60"
+        - name: MEMORY
+          value: "6G"
+        - name: JVM_XX_OPTS
+          value: "-XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:MaxGCPauseMillis=200 -XX:+UnlockExperimentalVMOptions -XX:+DisableExplicitGC -XX:+AlwaysPreTouch -XX:G1NewSizePercent=30 -XX:G1MaxNewSizePercent=40 -XX:G1HeapRegionSize=8M -XX:G1ReservePercent=20 -XX:G1HeapWastePercent=5 -XX:G1MixedGCCountTarget=4 -XX:InitiatingHeapOccupancyPercent=15 -XX:G1MixedGCLiveThresholdPercent=90 -XX:G1RSetUpdatingPauseTimePercent=5 -XX:SurvivorRatio=32 -XX:+PerfDisableSharedMem -XX:MaxTenuringThreshold=1"
+        - name: ENABLE_ROLLING_LOGS
+          value: "TRUE"
+        - name: VIEW_DISTANCE
+          value: "8"
+        - name: SIMULATION_DISTANCE
+          value: "6"
+        volumeMounts:
+        - name: mc-data
+          mountPath: /data
+        - name: mc-mods
+          mountPath: /mods
+        resources:
+          requests:
+            memory: "4Gi"
+            cpu: "1000m"
+          limits:
+            memory: "8Gi"
+            cpu: "2000m"
+      volumes:
+      - name: mc-data
+        persistentVolumeClaim:
+          claimName: funya-mura-data-pvc-new
+      - name: mc-mods
+        persistentVolumeClaim:
+          claimName: funya-mura-mods-pvc-new
+---
+# League Of Lost Cities Minecraft Server (Forge 1.20.1)
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: lost-cities-mc
+  namespace: mc-server
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: lost-cities-mc
+  template:
+    metadata:
+      labels:
+        app: lost-cities-mc
+    spec:
+      nodeSelector:
+        kubernetes.io/hostname: k8s-worker02-node
+      containers:
+      - name: minecraft-server
+        image: itzg/minecraft-server:latest
+        ports:
+        - containerPort: 25567
+        env:
+        - name: EULA
+          value: "TRUE"
+        - name: TYPE
+          value: "FORGE"
+        - name: VERSION
+          value: "1.20.1"
+        - name: FORGE_VERSION
+          value: "47.4.0"
+        - name: ONLINE_MODE
+          value: "TRUE"
+        - name: MAX_PLAYERS
+          value: "8"
+        - name: MOTD
+          value: "§f[§bLeague Of Lost Cities§f] §7- Explore the lost cities!\n§e<1.20.1> §b[Forge 47.4.0]"
+        - name: DIFFICULTY
+          value: "HARD"
+        - name: SPAWN_PROTECTION
+          value: "0"
+        - name: ENABLE_COMMAND_BLOCK
+          value: "TRUE"
+        - name: SNOOPER_ENABLED
+          value: "FALSE"
+        - name: USE_NATIVE_TRANSPORT
+          value: "TRUE"
+        - name: STOP_SERVER_ANNOUNCE_DELAY
+          value: "60"
+        - name: SERVER_PORT
+          value: "25567"
+        - name: MEMORY
+          value: "6G"
+        - name: JVM_XX_OPTS
+          value: "-XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:MaxGCPauseMillis=200 -XX:+UnlockExperimentalVMOptions -XX:+DisableExplicitGC -XX:+AlwaysPreTouch -XX:G1NewSizePercent=30 -XX:G1MaxNewSizePercent=40 -XX:G1HeapRegionSize=8M -XX:G1ReservePercent=20 -XX:G1HeapWastePercent=5 -XX:G1MixedGCCountTarget=4 -XX:InitiatingHeapOccupancyPercent=15 -XX:G1MixedGCLiveThresholdPercent=90 -XX:G1RSetUpdatingPauseTimePercent=5 -XX:SurvivorRatio=32 -XX:+PerfDisableSharedMem -XX:MaxTenuringThreshold=1"
+        - name: ENABLE_ROLLING_LOGS
+          value: "TRUE"
+        - name: VIEW_DISTANCE
+          value: "8"
+        - name: SIMULATION_DISTANCE
+          value: "6"
+        volumeMounts:
+        - name: mc-data
+          mountPath: /data
+        - name: mc-mods
+          mountPath: /mods
+        resources:
+          requests:
+            memory: "4Gi"
+            cpu: "1000m"
+          limits:
+            memory: "8Gi"
+            cpu: "2000m"
+      volumes:
+      - name: mc-data
+        persistentVolumeClaim:
+          claimName: lost-cities-data-pvc-new
+      - name: mc-mods
+        persistentVolumeClaim:
+          claimName: lost-cities-mods-pvc-new
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: lost-cities-mc
+  namespace: mc-server
+  annotations:
+    metallb.universe.tf/loadBalancerIPs: 100.110.172.88
+    metallb.universe.tf/allow-shared-ip: minecraft-shared
+spec:
+  type: ClusterIP
+  ports:
+  - port: 25567
+    targetPort: 25567
+  selector:
+    app: lost-cities-mc
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: funya-mura-mc
+  namespace: mc-server
+  annotations:
+    metallb.universe.tf/loadBalancerIPs: 100.110.172.88
+    metallb.universe.tf/allow-shared-ip: minecraft-shared
+spec:
+  type: ClusterIP
+  ports:
+  - port: 25566
+    targetPort: 25566
+  selector:
+    app: funya-mura-mc

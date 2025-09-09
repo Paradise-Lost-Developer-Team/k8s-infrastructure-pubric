@@ -1,0 +1,3 @@
+# Ignore plaintext secret working dirs
+k8s/**/secrets/plain/
+k8s/cloudflared/credentials.json

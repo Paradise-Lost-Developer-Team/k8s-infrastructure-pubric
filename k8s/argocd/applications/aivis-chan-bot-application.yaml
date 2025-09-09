@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: aivis-chan-bot
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: "https://github.com/Paradise-Lost-Developer-Team/k8s-infrastructure"
+    path: "k8s/aivis-chan-bot"
+    targetRevision: master
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: aivis-chan-bot
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

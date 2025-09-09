@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: aivis-chan-bot-web-env
+  namespace: default # 必要に応じて変更
+  labels:
+    app: aivis-chan-bot-web
+data:
+  BOT_TOKEN_1: "EXAMPLE_BOT_TOKEN_1"
+  BOT_TOKEN_2: "EXAMPLE_BOT_TOKEN_2"
+  BOT_TOKEN_3: "EXAMPLE_BOT_TOKEN_3"
+  BOT_TOKEN_4: "EXAMPLE_BOT_TOKEN_4"
+  BOT_TOKEN_5: "EXAMPLE_BOT_TOKEN_5"
+  BOT_TOKEN_6: "EXAMPLE_BOT_TOKEN_6"
+  PORT: "3001"
+  NODE_ENV: "production"
+  CORS_ORIGIN: "https://example.com"
+  MOCK_MODE: "false"
+  WEBHOOK_URL: "http://aivis-chan-bot-web:80/api/receive"
+  CLIENT_ID: "EXAMPLE_CLIENT_ID"
+  CLIENT_SECRET: "EXAMPLE_CLIENT_SECRET"
+  BASE_URL: "https://example.com"

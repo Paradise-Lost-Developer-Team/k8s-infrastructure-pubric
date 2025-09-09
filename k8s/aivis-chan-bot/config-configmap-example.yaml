@@ -1,0 +1,215 @@
+# Aivis-chan Bot 1st - ConfigMap (example)
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: aivis-chan-bot-1st-config
+data:
+  config.json: |
+    {
+      "TOKEN": "REPLACE_WITH_DISCORD_TOKEN",
+      "clientId": "REPLACE_WITH_CLIENT_ID",
+      "PATREON": {
+        "CLIENT_ID": "REPLACE_WITH_PATREON_CLIENT_ID",
+        "CLIENT_SECRET": "REPLACE_WITH_PATREON_CLIENT_SECRET",
+        "REDIRECT_URI": "https://example.com/auth/patreon/callback"
+      },
+      "TTS_HOST": "aivisspeech-engine",
+      "TTS_PORT": 10101,
+      "TTS_TIMEOUT": 15000,
+      "TTS_MAX_RETRIES": 3,
+      "TTS_RETRY_DELAY": 1000,
+      "sentry": {
+        "dsn": "REPLACE_WITH_SENTRY_DSN",
+        "environment": "example",
+        "tracesSampleRate": 0.0,
+        "enabled": false
+      },
+      "ALTERNATE_GEMINI_MODEL_ID": "REPLACE_WITH_MODEL_ID",
+      "ALTERNATE_MODEL_UNTIL": "REPLACE_WITH_DATE",
+      "ALTERNATE_GEMINI_MODEL_VERSION": "REPLACE_WITH_VERSION",
+      "GEMINI_SERVICE_ACCOUNT_PATH": "REPLACE_WITH_SERVICE_ACCOUNT_JSON",
+      "GEMINI_PROJECT_ID": "REPLACE_WITH_GEMINI_PROJECT_ID",
+      "GEMINI_LOCATION": "REPLACE_WITH_LOCATION",
+      "GEMINI_MODEL_ID": "REPLACE_WITH_MODEL_ID",
+      "speechEngineUrl": "http://aivisspeech-engine:10101"
+    }
+---
+# Aivis-chan Bot 2nd - ConfigMap (example)
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: aivis-chan-bot-2nd-config
+data:
+  config.json: |
+    {
+      "TOKEN": "REPLACE_WITH_DISCORD_TOKEN",
+      "clientId": "REPLACE_WITH_CLIENT_ID",
+      "PATREON": {
+        "CLIENT_ID": "REPLACE_WITH_PATREON_CLIENT_ID",
+        "CLIENT_SECRET": "REPLACE_WITH_PATREON_CLIENT_SECRET",
+        "REDIRECT_URI": "https://example.com/auth/patreon/callback"
+      },
+      "TTS_HOST": "aivisspeech-engine",
+      "TTS_PORT": 10101,
+      "TTS_TIMEOUT": 15000,
+      "TTS_MAX_RETRIES": 3,
+      "TTS_RETRY_DELAY": 1000,
+      "sentry": {
+        "dsn": "REPLACE_WITH_SENTRY_DSN",
+        "environment": "example",
+        "tracesSampleRate": 0.0,
+        "enabled": false
+      },
+      "ALTERNATE_GEMINI_MODEL_ID": "REPLACE_WITH_MODEL_ID",
+      "ALTERNATE_MODEL_UNTIL": "REPLACE_WITH_DATE",
+      "ALTERNATE_GEMINI_MODEL_VERSION": "REPLACE_WITH_VERSION",
+      "GEMINI_SERVICE_ACCOUNT_PATH": "REPLACE_WITH_SERVICE_ACCOUNT_JSON",
+      "GEMINI_PROJECT_ID": "REPLACE_WITH_GEMINI_PROJECT_ID",
+      "GEMINI_LOCATION": "REPLACE_WITH_LOCATION",
+      "GEMINI_MODEL_ID": "REPLACE_WITH_MODEL_ID",
+      "speechEngineUrl": "http://aivisspeech-engine:10101"
+    }
+---
+# Aivis-chan Bot 3rd - ConfigMap (example)
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: aivis-chan-bot-3rd-config
+data:
+  config.json: |
+    {
+      "TOKEN": "REPLACE_WITH_DISCORD_TOKEN",
+      "clientId": "REPLACE_WITH_CLIENT_ID",
+      "PATREON": {
+        "CLIENT_ID": "REPLACE_WITH_PATREON_CLIENT_ID",
+        "CLIENT_SECRET": "REPLACE_WITH_PATREON_CLIENT_SECRET",
+        "REDIRECT_URI": "https://example.com/auth/patreon/callback"
+      },
+      "TTS_HOST": "aivisspeech-engine",
+      "TTS_PORT": 10101,
+      "TTS_TIMEOUT": 15000,
+      "TTS_MAX_RETRIES": 3,
+      "TTS_RETRY_DELAY": 1000,
+      "sentry": {
+        "dsn": "REPLACE_WITH_SENTRY_DSN",
+        "environment": "example",
+        "tracesSampleRate": 0.0,
+        "enabled": false
+      },
+      "ALTERNATE_GEMINI_MODEL_ID": "REPLACE_WITH_MODEL_ID",
+      "ALTERNATE_MODEL_UNTIL": "REPLACE_WITH_DATE",
+      "ALTERNATE_GEMINI_MODEL_VERSION": "REPLACE_WITH_VERSION",
+      "GEMINI_SERVICE_ACCOUNT_PATH": "REPLACE_WITH_SERVICE_ACCOUNT_JSON",
+      "GEMINI_PROJECT_ID": "REPLACE_WITH_GEMINI_PROJECT_ID",
+      "GEMINI_LOCATION": "REPLACE_WITH_LOCATION",
+      "GEMINI_MODEL_ID": "REPLACE_WITH_MODEL_ID",
+      "speechEngineUrl": "http://aivisspeech-engine:10101"
+    }
+---
+# Aivis-chan Bot 4th - ConfigMap (example)
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: aivis-chan-bot-4th-config
+data:
+  config.json: |
+    {
+      "TOKEN": "REPLACE_WITH_DISCORD_TOKEN",
+      "clientId": "REPLACE_WITH_CLIENT_ID",
+      "PATREON": {
+        "CLIENT_ID": "REPLACE_WITH_PATREON_CLIENT_ID",
+        "CLIENT_SECRET": "REPLACE_WITH_PATREON_CLIENT_SECRET",
+        "REDIRECT_URI": "https://example.com/auth/patreon/callback"
+      },
+      "TTS_HOST": "aivisspeech-engine",
+      "TTS_PORT": 10101,
+      "TTS_TIMEOUT": 15000,
+      "TTS_MAX_RETRIES": 3,
+      "TTS_RETRY_DELAY": 1000,
+      "sentry": {
+        "dsn": "REPLACE_WITH_SENTRY_DSN",
+        "environment": "example",
+        "tracesSampleRate": 0.0,
+        "enabled": false
+      },
+      "ALTERNATE_GEMINI_MODEL_ID": "REPLACE_WITH_MODEL_ID",
+      "ALTERNATE_MODEL_UNTIL": "REPLACE_WITH_DATE",
+      "ALTERNATE_GEMINI_MODEL_VERSION": "REPLACE_WITH_VERSION",
+      "GEMINI_SERVICE_ACCOUNT_PATH": "REPLACE_WITH_SERVICE_ACCOUNT_JSON",
+      "GEMINI_PROJECT_ID": "REPLACE_WITH_GEMINI_PROJECT_ID",
+      "GEMINI_LOCATION": "REPLACE_WITH_LOCATION",
+      "GEMINI_MODEL_ID": "REPLACE_WITH_MODEL_ID",
+      "speechEngineUrl": "http://aivisspeech-engine:10101"
+    }
+---
+# Aivis-chan Bot 5th - ConfigMap (example)
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: aivis-chan-bot-5th-config
+data:
+  config.json: |
+    {
+      "TOKEN": "REPLACE_WITH_DISCORD_TOKEN",
+      "clientId": "REPLACE_WITH_CLIENT_ID",
+      "PATREON": {
+        "CLIENT_ID": "REPLACE_WITH_PATREON_CLIENT_ID",
+        "CLIENT_SECRET": "REPLACE_WITH_PATREON_CLIENT_SECRET",
+        "REDIRECT_URI": "https://example.com/auth/patreon/callback"
+      },
+      "TTS_HOST": "aivisspeech-engine",
+      "TTS_PORT": 10101,
+      "TTS_TIMEOUT": 15000,
+      "TTS_MAX_RETRIES": 3,
+      "TTS_RETRY_DELAY": 1000,
+      "sentry": {
+        "dsn": "REPLACE_WITH_SENTRY_DSN",
+        "environment": "example",
+        "tracesSampleRate": 0.0,
+        "enabled": false
+      },
+      "ALTERNATE_GEMINI_MODEL_ID": "REPLACE_WITH_MODEL_ID",
+      "ALTERNATE_MODEL_UNTIL": "REPLACE_WITH_DATE",
+      "ALTERNATE_GEMINI_MODEL_VERSION": "REPLACE_WITH_VERSION",
+      "GEMINI_SERVICE_ACCOUNT_PATH": "REPLACE_WITH_SERVICE_ACCOUNT_JSON",
+      "GEMINI_PROJECT_ID": "REPLACE_WITH_GEMINI_PROJECT_ID",
+      "GEMINI_LOCATION": "REPLACE_WITH_LOCATION",
+      "GEMINI_MODEL_ID": "REPLACE_WITH_MODEL_ID",
+      "speechEngineUrl": "http://aivisspeech-engine:10101"
+    }
+---
+# Aivis-chan Bot 6th - ConfigMap (example)
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: aivis-chan-bot-6th-config
+data:
+  config.json: |
+    {
+      "TOKEN": "REPLACE_WITH_DISCORD_TOKEN",
+      "clientId": "REPLACE_WITH_CLIENT_ID",
+      "PATREON": {
+        "CLIENT_ID": "REPLACE_WITH_PATREON_CLIENT_ID",
+        "CLIENT_SECRET": "REPLACE_WITH_PATREON_CLIENT_SECRET",
+        "REDIRECT_URI": "https://example.com/auth/patreon/callback"
+      },
+      "TTS_HOST": "aivisspeech-engine",
+      "TTS_PORT": 10101,
+      "TTS_TIMEOUT": 15000,
+      "TTS_MAX_RETRIES": 3,
+      "TTS_RETRY_DELAY": 1000,
+      "sentry": {
+        "dsn": "REPLACE_WITH_SENTRY_DSN",
+        "environment": "example",
+        "tracesSampleRate": 0.0,
+        "enabled": false
+      },
+      "ALTERNATE_GEMINI_MODEL_ID": "REPLACE_WITH_MODEL_ID",
+      "ALTERNATE_MODEL_UNTIL": "REPLACE_WITH_DATE",
+      "ALTERNATE_GEMINI_MODEL_VERSION": "REPLACE_WITH_VERSION",
+      "GEMINI_SERVICE_ACCOUNT_PATH": "REPLACE_WITH_SERVICE_ACCOUNT_JSON",
+      "GEMINI_PROJECT_ID": "REPLACE_WITH_GEMINI_PROJECT_ID",
+      "GEMINI_LOCATION": "REPLACE_WITH_LOCATION",
+      "GEMINI_MODEL_ID": "REPLACE_WITH_MODEL_ID",
+      "speechEngineUrl": "http://aivisspeech-engine:10101"
+    }
