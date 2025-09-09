@@ -1,0 +1,31 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: minecraft-servers
+  namespace: argocd
+  labels:
+    app.kubernetes.io/name: minecraft-servers
+spec:
+  project: default
+  source:
+    repoURL: "git@github.com:Paradise-Lost-Developer-Team/k8s-infrastructure.git" # <- 適宜変更
+    targetRevision: master
+    path: "k8s/minecraft-servers" # <- リポジトリ内のパスに合わせて変更
+    directory:
+      recurse: true
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: mc-servers
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    retry:
+      limit: 5
+      backoff:
+        duration: 5s
+        factor: 2
+        maxDuration: 3m
+    syncOptions:
+      - CreateNamespace=true
+      - ApplyOutOfSyncOnly=true

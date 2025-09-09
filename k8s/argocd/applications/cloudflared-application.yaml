@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: cloudflared
+  namespace: argocd
+  labels:
+    app.kubernetes.io/name: cloudflared
+spec:
+  project: default
+  source:
+    repoURL: "git@github.com:Paradise-Lost-Developer-Team/k8s-infrastructure.git" # ← リポジトリを変更してください
+    targetRevision: master
+    path: "k8s/cloudflared" # ← マニフェスト/helm/kustomize のパスを変更してください
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: cloudflared
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
+      - ApplyOutOfSyncOnly=true

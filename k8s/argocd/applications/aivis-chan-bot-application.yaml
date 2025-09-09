@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: "https://github.com/Paradise-Lost-Developer-Team/k8s-infrastructure"
+    repoURL: "git@github.com:Paradise-Lost-Developer-Team/k8s-infrastructure.git"
     path: "k8s/aivis-chan-bot"
     targetRevision: master
   destination:
